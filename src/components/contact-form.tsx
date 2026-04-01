@@ -105,9 +105,9 @@ export function ContactForm() {
           />
         </div>
         <div className="space-y-2">
-          <Label className="text-zinc-300">Service Needed</Label>
+          <Label htmlFor="service" className="text-zinc-300">Service Needed</Label>
           <Select value={service} onValueChange={(val) => setService(val ?? "")}>
-            <SelectTrigger className="bg-zinc-900/50 border-zinc-700 text-white h-11 w-full">
+            <SelectTrigger id="service" className="bg-zinc-900/50 border-zinc-700 text-white h-11 w-full">
               <SelectValue placeholder="Select a service" />
             </SelectTrigger>
             <SelectContent className="bg-zinc-900 border-zinc-700">

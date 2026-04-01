@@ -90,13 +90,14 @@ export function Navbar() {
 
           {/* Mobile Menu */}
           <div className="flex md:hidden items-center gap-2">
-            <a href="tel:5024348253">
+            <a href="tel:5024348253" aria-label="Call (502) 434-8253">
               <Button variant="ghost" size="icon" className="text-white">
                 <Phone className="size-5" />
               </Button>
             </a>
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger
+                aria-label="Open menu"
                 className="inline-flex items-center justify-center size-8 rounded-lg text-white hover:bg-white/10 transition-colors"
               >
                 <Menu className="size-5" />

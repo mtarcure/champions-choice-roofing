@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Shield, Phone, Mail, MapPin, ExternalLink } from "lucide-react";
+import { Shield, Phone, Mail, MapPin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 const services = [
