@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Source_Sans_3, Montserrat, Gentium_Book_Plus } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import "./globals.css";
 
-const inter = Inter({
+const sourceSans = Source_Sans_3({
   variable: "--font-sans",
   subsets: ["latin"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
+});
+
+const gentiumBookPlus = Gentium_Book_Plus({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -44,7 +56,7 @@ const jsonLd = {
   description:
     "Louisville's premier roofing contractor offering roof replacement, storm restoration, siding, and gutters.",
   url: "https://roofwithchampions.com",
-  telephone: ["+15024348253", "+15029190278"],
+  telephone: ["+15029190278", "+15024348253"],
   email: "dean@roofwithchampions.com",
   address: {
     "@type": "PostalAddress",
@@ -72,14 +84,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} dark antialiased`}>
+    <html lang="en" className={`${sourceSans.variable} ${montserrat.variable} ${gentiumBookPlus.variable} antialiased`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#0a0a0a] text-zinc-50 font-sans">
+      <body className="min-h-screen flex flex-col bg-[#F5F5F5] text-[#1C1C1C] font-sans">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

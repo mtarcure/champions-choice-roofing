@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { ContactForm } from "@/components/contact-form";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get a free roof inspection from Champions Choice Roofing. Call (502) 434-8253 or fill out our contact form. Serving Louisville, KY and surrounding areas.",
+    "Get a free roof inspection from Champions Choice Roofing. Call (502) 919-0278 or fill out our contact form. Serving Louisville, KY and surrounding areas.",
   openGraph: {
     title: "Contact Us | Champions Choice Roofing",
     description:
-      "Get a free roof inspection. Call (502) 434-8253 or request a quote online.",
+      "Get a free roof inspection. Call (502) 919-0278 or request a quote online.",
   },
 };
 
@@ -19,8 +19,8 @@ const contactInfo = [
     icon: Phone,
     label: "Phone",
     items: [
-      { text: "(502) 434-8253", href: "tel:5024348253" },
       { text: "(502) 919-0278", href: "tel:5029190278" },
+      { text: "(502) 434-8253", href: "tel:5024348253" },
     ],
   },
   {
@@ -53,13 +53,13 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-zinc-950 to-[#0a0a0a]">
+      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-[#1A1A2E] to-[#F5F5F5]">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
             Contact Us
           </h1>
-          <p className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto">
-            Ready for a free roof inspection? Fill out the form below or give us a
+          <p className="mt-4 text-lg text-zinc-300 max-w-2xl mx-auto">
+            Ready for a free roof inspection? Fill out our form or give us a
             call. We respond within 24 hours.
           </p>
         </div>
@@ -69,14 +69,33 @@ export default function ContactPage() {
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-            {/* Form */}
+            {/* CTA */}
             <div className="lg:col-span-3">
-              <Card className="bg-zinc-900/50 border-zinc-800">
-                <CardContent className="pt-6">
-                  <h2 className="text-xl font-bold text-white mb-6">
+              <Card className="bg-white border-gray-200 shadow-sm">
+                <CardContent className="pt-8 pb-8 text-center">
+                  <h2 className="text-2xl font-bold text-[#1C1C1C] mb-4">
                     Request a Free Estimate
                   </h2>
-                  <ContactForm />
+                  <p className="text-[#6B7280] mb-8 max-w-md mx-auto">
+                    Click below to fill out our quick assessment form. We&apos;ll review your
+                    information and get back to you within 24 hours.
+                  </p>
+                  <a
+                    href="https://forms.gle/RaFpTL7RmBaLgeGF6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="bg-[#CC0000] text-white hover:bg-[#A30000] font-bold text-lg px-10 py-6">
+                      Start Your Free Assessment
+                      <ArrowRight className="size-5 ml-2" />
+                    </Button>
+                  </a>
+                  <p className="mt-6 text-sm text-zinc-500">
+                    Or call us directly at{" "}
+                    <a href="tel:5029190278" className="text-[#0033A0] hover:text-[#002878] transition-colors">
+                      (502) 919-0278
+                    </a>
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -84,14 +103,14 @@ export default function ContactPage() {
             {/* Info */}
             <div className="lg:col-span-2 space-y-6">
               {contactInfo.map((info) => (
-                <Card key={info.label} className="bg-zinc-900/50 border-zinc-800">
+                <Card key={info.label} className="bg-white border-gray-200 shadow-sm">
                   <CardContent className="pt-4 pb-4">
                     <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-lg bg-blue-500/10 shrink-0">
-                        <info.icon className="size-4 text-blue-400" />
+                      <div className="p-2 rounded-lg bg-[#0033A0]/10 shrink-0">
+                        <info.icon className="size-4 text-[#0033A0]" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-semibold text-white mb-1">
+                        <h3 className="text-sm font-semibold text-[#1C1C1C] mb-1">
                           {info.label}
                         </h3>
                         {info.items.map((item) =>
@@ -99,12 +118,12 @@ export default function ContactPage() {
                             <a
                               key={item.text}
                               href={item.href}
-                              className="block text-sm text-zinc-400 hover:text-white transition-colors"
+                              className="block text-sm text-[#6B7280] hover:text-[#1C1C1C] transition-colors"
                             >
                               {item.text}
                             </a>
                           ) : (
-                            <p key={item.text} className="text-sm text-zinc-400">
+                            <p key={item.text} className="text-sm text-[#6B7280]">
                               {item.text}
                             </p>
                           )
@@ -116,20 +135,20 @@ export default function ContactPage() {
               ))}
 
               {/* Emergency CTA */}
-              <Card className="bg-amber-500/10 border-amber-500/20">
+              <Card className="bg-[#CC0000]/10 border-[#CC0000]/20">
                 <CardContent className="pt-4 pb-4">
-                  <h3 className="text-sm font-bold text-amber-400 mb-1">
+                  <h3 className="text-sm font-bold text-[#CC0000] mb-1">
                     Emergency Storm Damage?
                   </h3>
-                  <p className="text-sm text-zinc-400 mb-3">
+                  <p className="text-sm text-[#6B7280] mb-3">
                     Call us directly for priority response.
                   </p>
                   <a
-                    href="tel:5024348253"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500 text-black font-semibold text-sm hover:bg-amber-400 transition-colors"
+                    href="tel:5029190278"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#CC0000] text-white font-semibold text-sm hover:bg-[#A30000] transition-colors"
                   >
                     <Phone className="size-4" />
-                    (502) 434-8253
+                    (502) 919-0278
                   </a>
                 </CardContent>
               </Card>

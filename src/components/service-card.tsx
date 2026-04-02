@@ -19,14 +19,14 @@ export function ServiceCard({ icon: Icon, title, description, href = "/services"
       transition={{ type: "spring", stiffness: 300 }}
     >
       <Link href={href}>
-        <Card className="group bg-zinc-900/50 border-zinc-800 hover:border-zinc-700 transition-all h-full cursor-pointer">
+        <Card className="group bg-white border-gray-200 hover:border-[#0033A0]/30 hover:shadow-md transition-all h-full cursor-pointer">
           <CardContent className="pt-6">
-            <div className="mb-4 inline-flex p-3 rounded-xl bg-blue-500/10">
-              <Icon className="size-6 text-blue-500" />
+            <div className="mb-4 inline-flex p-3 rounded-xl bg-[#0033A0]/10">
+              <Icon className="size-6 text-[#0033A0]" />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed mb-4">{description}</p>
-            <div className="flex items-center gap-1 text-sm font-medium text-blue-400 group-hover:text-blue-300 transition-colors">
+            <h3 className="text-lg font-semibold text-[#1C1C1C] mb-2">{title}</h3>
+            <p className="text-sm text-[#6B7280] leading-relaxed mb-4">{description}</p>
+            <div className="flex items-center gap-1 text-sm font-medium text-[#0033A0] group-hover:text-[#002878] transition-colors">
               Learn more
               <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
             </div>

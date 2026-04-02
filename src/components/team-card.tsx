@@ -20,7 +20,7 @@ export function TeamCard({ name, title, nickname, bio, imageSrc, team }: TeamCar
       whileHover={{ scale: 1.02, y: -4 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <Card className="group bg-zinc-900/50 border-zinc-800 hover:border-zinc-700 transition-all overflow-hidden">
+      <Card className="group bg-white border-gray-200 hover:border-gray-300 hover:shadow-md transition-all overflow-hidden">
         <div className="relative aspect-[4/5] overflow-hidden">
           <Image
             src={imageSrc}
@@ -44,15 +44,15 @@ export function TeamCard({ name, title, nickname, bio, imageSrc, team }: TeamCar
               <Badge
                 className={
                   team === "red"
-                    ? "bg-red-500/20 text-red-400 border-red-500/30"
-                    : "bg-blue-500/20 text-blue-400 border-blue-500/30"
+                    ? "bg-[#CC0000]/15 text-[#CC0000] border-[#CC0000]/30"
+                    : "bg-[#0033A0]/15 text-[#0033A0] border-[#0033A0]/30"
                 }
               >
                 Team {team === "red" ? "Red" : "Blue"}
               </Badge>
             )}
           </div>
-          <p className="text-sm text-zinc-400 leading-relaxed">{bio}</p>
+          <p className="text-sm text-[#6B7280] leading-relaxed">{bio}</p>
         </CardContent>
       </Card>
     </motion.div>

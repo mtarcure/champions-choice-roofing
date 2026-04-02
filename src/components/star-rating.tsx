@@ -8,7 +8,7 @@ export function StarRating({ rating = 5, size = 16 }: { rating?: number; size?: 
           key={i}
           size={size}
           aria-hidden="true"
-          className={i < rating ? "fill-amber-400 text-amber-400" : "text-zinc-600"}
+          className={i < rating ? "fill-[#D4A843] text-[#D4A843]" : "text-gray-300"}
         />
       ))}
     </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,9 +8,9 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(37,99,235,0.15),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.08),transparent_60%)]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1A1A2E] via-[#1A1A2E] to-[#0d0d20]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(204,0,0,0.12),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,51,160,0.10),transparent_60%)]" />
 
       {/* Grid pattern overlay */}
       <div
@@ -30,9 +29,9 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8">
-              <div className="size-2 rounded-full bg-blue-500 animate-pulse" />
-              <span className="text-sm text-blue-400 font-medium">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0033A0]/20 border border-[#0033A0]/40 mb-8">
+              <div className="size-2 rounded-full bg-[#6699ff] animate-pulse" />
+              <span className="text-sm text-[#6699ff] font-medium">
                 Louisville&apos;s Trusted Roofing Contractor
               </span>
             </div>
@@ -45,7 +44,7 @@ export function HeroSection() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.1]"
           >
             Storm-Tested.{" "}
-            <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#CC0000] to-[#0033A0] bg-clip-text text-transparent">
               Champion-Approved.
             </span>
           </motion.h1>
@@ -54,7 +53,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-lg md:text-xl text-zinc-400 max-w-xl leading-relaxed"
+            className="mt-6 text-lg md:text-xl text-zinc-300 max-w-xl leading-relaxed"
           >
             Expert roof installations, storm restoration, and unmatched warranties.
             We champion for Louisville homeowners with every project.
@@ -66,19 +65,23 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-10 flex flex-col sm:flex-row gap-4"
           >
-            <Link href="/contact">
-              <Button className="bg-amber-500 text-black hover:bg-amber-400 font-bold text-base px-8 py-6 w-full sm:w-auto">
+            <a
+              href="https://forms.gle/RaFpTL7RmBaLgeGF6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-[#CC0000] text-white hover:bg-[#A30000] font-bold text-base px-8 py-6 w-full sm:w-auto">
                 Get Free Inspection
                 <ArrowRight className="size-4 ml-2" />
               </Button>
-            </Link>
-            <a href="tel:5024348253">
+            </a>
+            <a href="tel:5029190278">
               <Button
                 variant="outline"
-                className="border-zinc-700 text-white hover:bg-zinc-800 font-semibold text-base px-8 py-6 w-full sm:w-auto"
+                className="border-[#0033A0] text-white hover:bg-[#0033A0]/20 font-semibold text-base px-8 py-6 w-full sm:w-auto"
               >
                 <Phone className="size-4 mr-2" />
-                (502) 434-8253
+                (502) 919-0278
               </Button>
             </a>
           </motion.div>
@@ -86,7 +89,7 @@ export function HeroSection() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5F5F5] to-transparent" />
     </section>
   );
 }

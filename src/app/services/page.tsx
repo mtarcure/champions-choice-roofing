@@ -17,12 +17,12 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-zinc-950 to-[#0a0a0a]">
+      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-[#1A1A2E] to-[#F5F5F5]">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
             Our Services
           </h1>
-          <p className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-zinc-300 max-w-2xl mx-auto">
             Comprehensive roofing, siding, and gutter solutions for Louisville
             homeowners. Quality products, expert installation, and warranties you
             can count on.

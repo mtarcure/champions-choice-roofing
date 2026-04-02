@@ -22,7 +22,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 px-6 bg-zinc-950/50">
+    <section className="py-24 px-6 bg-[#F3F4F6]">
       <div className="max-w-7xl mx-auto">
         <SectionHeading
           title="What Louisville Homeowners Say"
@@ -31,14 +31,14 @@ export function TestimonialsSection() {
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t) => (
             <StaggerItem key={t.name}>
-              <Card className="bg-zinc-900/50 border-zinc-800 h-full">
+              <Card className="bg-white border-gray-200 h-full shadow-sm">
                 <CardContent className="pt-6">
                   <StarRating />
-                  <p className="mt-4 text-zinc-300 leading-relaxed text-sm">
+                  <p className="mt-4 text-[#1C1C1C] leading-relaxed text-sm font-serif italic">
                     &ldquo;{t.text}&rdquo;
                   </p>
-                  <p className="mt-4 text-sm font-semibold text-white">{t.name}</p>
-                  <p className="text-xs text-zinc-500">Google Review</p>
+                  <p className="mt-4 text-sm font-semibold text-[#1C1C1C]">{t.name}</p>
+                  <p className="text-xs text-[#6B7280]">Google Review</p>
                 </CardContent>
               </Card>
             </StaggerItem>

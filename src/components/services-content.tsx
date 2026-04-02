@@ -1,23 +1,23 @@
 "use client";
 
-import {
-  Hammer,
-  Wrench,
-  Settings,
-  Wind,
-  PanelLeft,
-  Layers,
-  Columns3,
-  Droplets,
-  ShieldCheck,
-  CheckCircle,
-} from "lucide-react";
+import Image from "next/image";
+import { CheckCircle } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 import { Badge } from "@/components/ui/badge";
+import { SectionHeading } from "@/components/section-heading";
 
-const services = [
+interface ServiceItem {
+  photoSrc: string;
+  photoAlt: string;
+  title: string;
+  description: string;
+  features: string[];
+}
+
+const roofingServices: ServiceItem[] = [
   {
-    icon: Hammer,
+    photoSrc: "/images/services/drone-roofing.jpg",
+    photoAlt: "Aerial drone view of roof replacement project",
     title: "Full Roof Replacement",
     description:
       "Whether your roof is aging or storm-damaged, we deliver top-quality replacements that last. Our team uses premium Owens Corning products with extended warranty options to protect your investment for decades.",
@@ -30,7 +30,8 @@ const services = [
     ],
   },
   {
-    icon: Wrench,
+    photoSrc: "/images/services/repair.jpg",
+    photoAlt: "Roof repair in progress",
     title: "Roof Repairs",
     description:
       "From minor leaks to missing shingles, our repair team diagnoses issues fast and fixes them right the first time. Every repair starts with a free estimate.",
@@ -43,7 +44,8 @@ const services = [
     ],
   },
   {
-    icon: Settings,
+    photoSrc: "/images/services/maintenance.png",
+    photoAlt: "Roof maintenance inspection",
     title: "Roof Maintenance",
     description:
       "Preventive maintenance extends your roof's life and prevents costly repairs. Our maintenance program keeps your roof in peak condition year-round.",
@@ -56,7 +58,8 @@ const services = [
     ],
   },
   {
-    icon: Wind,
+    photoSrc: "/images/services/ventilation.jpg",
+    photoAlt: "Roof ventilation system installation",
     title: "Ventilation Calculations",
     description:
       "Proper attic ventilation is critical for roof longevity and energy efficiency. We calculate and install the right ventilation system for your home.",
@@ -68,8 +71,12 @@ const services = [
       "Code-compliant solutions",
     ],
   },
+];
+
+const sidingGutterServices: ServiceItem[] = [
   {
-    icon: PanelLeft,
+    photoSrc: "/images/services/siding.png",
+    photoAlt: "Vinyl siding installation on home exterior",
     title: "Vinyl Siding",
     description:
       "Transform your home's exterior with premium Mastic brand vinyl siding. Low maintenance, durable, and available in a wide range of colors and styles.",
@@ -82,7 +89,8 @@ const services = [
     ],
   },
   {
-    icon: Layers,
+    photoSrc: "/images/services/siding.png",
+    photoAlt: "Hardy fiber cement siding installation",
     title: "Hardy Siding",
     description:
       "James Hardie fiber cement siding offers unmatched durability and curb appeal. Resistant to fire, rot, and pests with a premium finished look.",
@@ -95,7 +103,8 @@ const services = [
     ],
   },
   {
-    icon: Columns3,
+    photoSrc: "/images/services/siding.png",
+    photoAlt: "Aluminum wraps and soffits installation",
     title: "Aluminum Wraps & Soffits",
     description:
       "Protect your fascia boards and soffits with custom aluminum wraps. Eliminates painting, prevents rot, and gives your roofline a clean finished look.",
@@ -108,7 +117,8 @@ const services = [
     ],
   },
   {
-    icon: Droplets,
+    photoSrc: "/images/services/gutters.jpg",
+    photoAlt: "Seamless gutter installation",
     title: "Seamless Gutters",
     description:
       "Custom-fabricated seamless gutters in 5-inch and 6-inch sizes. Formed on-site for a perfect fit with no seams to leak.",
@@ -121,7 +131,8 @@ const services = [
     ],
   },
   {
-    icon: ShieldCheck,
+    photoSrc: "/images/services/gutters.jpg",
+    photoAlt: "Gutter guard system protecting gutters from debris",
     title: "Gutter Guards",
     description:
       "Stop cleaning gutters forever. Our gutter guard systems prevent clogs from leaves and debris while allowing water to flow freely.",
@@ -135,51 +146,93 @@ const services = [
   },
 ];
 
+function ServiceBlock({ service, index, reversed }: { service: ServiceItem; index: number; reversed: boolean }) {
+  return (
+    <AnimatedSection delay={0.1}>
+      <div
+        className={`flex flex-col lg:flex-row gap-10 items-start ${
+          reversed ? "lg:flex-row-reverse" : ""
+        }`}
+      >
+        {/* Photo */}
+        <div className="lg:w-1/3 w-full">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200">
+            <Image
+              src={service.photoSrc}
+              alt={service.photoAlt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 33vw"
+              className="object-cover"
+            />
+            <div className="absolute bottom-2 right-2 px-3 py-1 rounded-lg bg-white/90 border border-gray-200">
+              <Badge variant="secondary" className="text-xs">
+                {String(index + 1).padStart(2, "0")}
+              </Badge>
+            </div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="lg:w-2/3">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#1C1C1C] mb-4">
+            {service.title}
+          </h2>
+          <p className="text-[#6B7280] leading-relaxed mb-6">
+            {service.description}
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {service.features.map((f) => (
+              <li key={f} className="flex items-start gap-2">
+                <CheckCircle className="size-4 text-[#0033A0] mt-0.5 shrink-0" />
+                <span className="text-sm text-[#1C1C1C]">{f}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </AnimatedSection>
+  );
+}
+
 export function ServicesContent() {
   return (
     <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto space-y-20">
-        {services.map((service, i) => (
-          <AnimatedSection key={service.title} delay={0.1}>
-            <div
-              className={`flex flex-col lg:flex-row gap-10 items-start ${
-                i % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
-            >
-              {/* Icon */}
-              <div className="lg:w-1/3 flex justify-center lg:justify-start">
-                <div className="relative">
-                  <div className="w-32 h-32 rounded-3xl bg-gradient-to-br from-blue-500/20 to-blue-600/5 border border-blue-500/10 flex items-center justify-center">
-                    <service.icon className="size-12 text-blue-400" />
-                  </div>
-                  <div className="absolute -bottom-2 -right-2 px-3 py-1 rounded-lg bg-zinc-900 border border-zinc-800">
-                    <Badge variant="secondary" className="text-xs">
-                      {String(i + 1).padStart(2, "0")}
-                    </Badge>
-                  </div>
-                </div>
-              </div>
+        {/* Roofing Services */}
+        <div>
+          <SectionHeading
+            title="Roofing Services"
+            subtitle="Complete roofing solutions from replacement to preventive maintenance"
+          />
+          <div className="space-y-20">
+            {roofingServices.map((service, i) => (
+              <ServiceBlock
+                key={service.title}
+                service={service}
+                index={i}
+                reversed={i % 2 === 1}
+              />
+            ))}
+          </div>
+        </div>
 
-              {/* Content */}
-              <div className="lg:w-2/3">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                  {service.title}
-                </h2>
-                <p className="text-zinc-400 leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {service.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2">
-                      <CheckCircle className="size-4 text-green-500 mt-0.5 shrink-0" />
-                      <span className="text-sm text-zinc-300">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </AnimatedSection>
-        ))}
+        {/* Siding & Gutters */}
+        <div>
+          <SectionHeading
+            title="Siding & Gutters"
+            subtitle="Premium exterior solutions to protect and beautify your home"
+          />
+          <div className="space-y-20">
+            {sidingGutterServices.map((service, i) => (
+              <ServiceBlock
+                key={service.title}
+                service={service}
+                index={i + roofingServices.length}
+                reversed={i % 2 === 1}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

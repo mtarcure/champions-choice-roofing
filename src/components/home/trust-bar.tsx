@@ -9,28 +9,28 @@ const stats = [
     label: "Google Rating",
     value: "5.0",
     detail: "14+ Reviews",
-    color: "text-amber-400",
+    color: "text-[#D4A843]",
   },
   {
     icon: Award,
     label: "Owens Corning",
     value: "Preferred",
     detail: "Contractor",
-    color: "text-blue-400",
+    color: "text-[#0033A0]",
   },
   {
     icon: MapPin,
     label: "Serving",
     value: "Louisville",
     detail: "KY & Surrounding",
-    color: "text-green-400",
+    color: "text-[#0033A0]",
   },
   {
     icon: ShieldCheck,
     label: "Licensed",
     value: "Fully",
     detail: "Insured & Bonded",
-    color: "text-purple-400",
+    color: "text-[#0033A0]",
   },
 ];
 
@@ -43,14 +43,14 @@ export function TrustBar() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="flex items-center gap-3 p-4 rounded-2xl bg-zinc-900/80 backdrop-blur border border-zinc-800"
+                className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-gray-200 shadow-sm"
               >
-                <div className={`p-2 rounded-xl bg-white/5 ${stat.color}`}>
+                <div className={`p-2 rounded-xl bg-[#F3F4F6] ${stat.color}`}>
                   <stat.icon className="size-5" />
                 </div>
                 <div>
-                  <div className="text-lg font-bold text-white">{stat.value}</div>
-                  <div className="text-xs text-zinc-400">{stat.detail}</div>
+                  <div className="text-lg font-bold text-[#1C1C1C]">{stat.value}</div>
+                  <div className="text-xs text-[#6B7280]">{stat.detail}</div>
                 </div>
               </div>
             ))}

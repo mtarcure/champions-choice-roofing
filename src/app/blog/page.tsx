@@ -39,12 +39,12 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-zinc-950 to-[#0a0a0a]">
+      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-[#1A1A2E] to-[#F5F5F5]">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
             Blog
           </h1>
-          <p className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-zinc-300 max-w-2xl mx-auto">
             Expert roofing tips, storm damage guides, and industry insights from the
             Champions Choice team.
           </p>
@@ -58,25 +58,25 @@ export default function BlogPage() {
             {posts.map((post) => (
               <Card
                 key={post.title}
-                className="group bg-zinc-900/50 border-zinc-800 hover:border-zinc-700 transition-all overflow-hidden"
+                className="group bg-white border-gray-200 hover:border-[#0033A0]/30 hover:shadow-md transition-all overflow-hidden"
               >
                 {/* Placeholder image */}
-                <div className="aspect-video bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center">
-                  <span className="text-zinc-600 text-sm font-medium">
+                <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                  <span className="text-gray-400 text-sm font-medium">
                     Article Image
                   </span>
                 </div>
                 <CardContent className="pt-4">
                   <div className="flex items-center gap-2 mb-3">
-                    <Badge variant="outline" className="text-xs border-zinc-700 text-zinc-400">
+                    <Badge variant="outline" className="text-xs border-gray-300 text-[#6B7280]">
                       <CalendarDays className="size-3 mr-1" />
                       {post.date}
                     </Badge>
                   </div>
-                  <h2 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                  <h2 className="text-lg font-semibold text-[#1C1C1C] mb-2 group-hover:text-[#0033A0] transition-colors">
                     {post.title}
                   </h2>
-                  <p className="text-sm text-zinc-400 leading-relaxed">
+                  <p className="text-sm text-[#6B7280] leading-relaxed">
                     {post.excerpt}
                   </p>
                 </CardContent>
@@ -85,11 +85,11 @@ export default function BlogPage() {
           </div>
 
           {/* Coming soon notice */}
-          <div className="text-center mt-16 py-12 rounded-2xl bg-zinc-900/30 border border-zinc-800">
-            <h3 className="text-xl font-bold text-white mb-2">
+          <div className="text-center mt-16 py-12 rounded-2xl bg-white border border-gray-200 shadow-sm">
+            <h3 className="text-xl font-bold text-[#1C1C1C] mb-2">
               More Content Coming Soon
             </h3>
-            <p className="text-zinc-400 max-w-md mx-auto">
+            <p className="text-[#6B7280] max-w-md mx-auto">
               We&apos;re working on expert guides and tips to help Louisville homeowners
               make informed decisions about their roofs.
             </p>

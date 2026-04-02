@@ -58,9 +58,9 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-center">
-        <CheckCircle className="size-12 text-green-500 mb-4" />
-        <h3 className="text-xl font-bold text-white mb-2">Message Sent!</h3>
-        <p className="text-zinc-400">
+        <CheckCircle className="size-12 text-green-600 mb-4" />
+        <h3 className="text-xl font-bold text-[#1C1C1C] mb-2">Message Sent!</h3>
+        <p className="text-[#6B7280]">
           We&apos;ll get back to you within 24 hours. For urgent needs, call us directly.
         </p>
       </div>
@@ -71,48 +71,48 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="name" className="text-zinc-300">Name *</Label>
+          <Label htmlFor="name" className="text-[#1C1C1C]">Name *</Label>
           <Input
             id="name"
             name="name"
             required
             placeholder="Your full name"
-            className="bg-zinc-900/50 border-zinc-700 text-white placeholder:text-zinc-500 h-11"
+            className="bg-white border-gray-300 text-[#1C1C1C] placeholder:text-[#6B7280] h-11"
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-zinc-300">Email *</Label>
+          <Label htmlFor="email" className="text-[#1C1C1C]">Email *</Label>
           <Input
             id="email"
             name="email"
             type="email"
             required
             placeholder="your@email.com"
-            className="bg-zinc-900/50 border-zinc-700 text-white placeholder:text-zinc-500 h-11"
+            className="bg-white border-gray-300 text-[#1C1C1C] placeholder:text-[#6B7280] h-11"
           />
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="phone" className="text-zinc-300">Phone</Label>
+          <Label htmlFor="phone" className="text-[#1C1C1C]">Phone</Label>
           <Input
             id="phone"
             name="phone"
             type="tel"
             placeholder="(502) 555-0123"
-            className="bg-zinc-900/50 border-zinc-700 text-white placeholder:text-zinc-500 h-11"
+            className="bg-white border-gray-300 text-[#1C1C1C] placeholder:text-[#6B7280] h-11"
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="service" className="text-zinc-300">Service Needed</Label>
+          <Label htmlFor="service" className="text-[#1C1C1C]">Service Needed</Label>
           <Select value={service} onValueChange={(val) => setService(val ?? "")}>
-            <SelectTrigger id="service" className="bg-zinc-900/50 border-zinc-700 text-white h-11 w-full">
+            <SelectTrigger id="service" className="bg-white border-gray-300 text-[#1C1C1C] h-11 w-full">
               <SelectValue placeholder="Select a service" />
             </SelectTrigger>
-            <SelectContent className="bg-zinc-900 border-zinc-700">
+            <SelectContent className="bg-white border-gray-200">
               {services.map((s) => (
-                <SelectItem key={s} value={s} className="text-zinc-200">
+                <SelectItem key={s} value={s} className="text-[#1C1C1C]">
                   {s}
                 </SelectItem>
               ))}
@@ -123,20 +123,20 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="message" className="text-zinc-300">Message *</Label>
+        <Label htmlFor="message" className="text-[#1C1C1C]">Message *</Label>
         <Textarea
           id="message"
           name="message"
           required
           placeholder="Tell us about your project or concerns..."
-          className="bg-zinc-900/50 border-zinc-700 text-white placeholder:text-zinc-500 min-h-[120px]"
+          className="bg-white border-gray-300 text-[#1C1C1C] placeholder:text-[#6B7280] min-h-[120px]"
         />
       </div>
 
       {status === "error" && (
-        <div className="flex items-center gap-2 p-3 rounded-lg bg-red-500/10 border border-red-500/20">
-          <AlertCircle className="size-4 text-red-400 shrink-0" />
-          <p className="text-sm text-red-400">
+        <div className="flex items-center gap-2 p-3 rounded-lg bg-red-50 border border-red-200">
+          <AlertCircle className="size-4 text-[#CC0000] shrink-0" />
+          <p className="text-sm text-[#CC0000]">
             Something went wrong. Please try again or call us directly.
           </p>
         </div>
@@ -145,7 +145,7 @@ export function ContactForm() {
       <Button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full bg-amber-500 text-black hover:bg-amber-400 font-bold h-12 text-base"
+        className="w-full bg-[#CC0000] text-white hover:bg-[#A30000] font-bold h-12 text-base"
       >
         {status === "submitting" ? (
           "Sending..."
