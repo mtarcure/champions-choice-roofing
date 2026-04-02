@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CalendarDays } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Share2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -14,26 +14,6 @@ export const metadata: Metadata = {
   },
 };
 
-const posts = [
-  {
-    title: "How to Spot Storm Damage on Your Roof",
-    excerpt:
-      "Louisville sees 3-5 major storm events per year. Learn the telltale signs of wind, hail, and water damage so you can act fast.",
-    date: "Coming Soon",
-  },
-  {
-    title: "Roof Repair vs. Replacement: Making the Right Choice",
-    excerpt:
-      "When does it make sense to patch things up versus investing in a full replacement? Our guide breaks down the decision factors.",
-    date: "Coming Soon",
-  },
-  {
-    title: "Understanding Your Roof Warranty",
-    excerpt:
-      "From manufacturer warranties to workmanship guarantees, learn what's covered and how to protect your investment.",
-    date: "Coming Soon",
-  },
-];
 
 export default function BlogPage() {
   return (
@@ -42,7 +22,7 @@ export default function BlogPage() {
       <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-[#1A1A2E] to-[#F5F5F5]">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-            Blog
+            Champions Blog
           </h1>
           <p className="mt-4 text-lg text-zinc-300 max-w-2xl mx-auto">
             Expert roofing tips, storm damage guides, and industry insights from the
@@ -51,49 +31,45 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Posts Grid */}
-      <section className="py-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {posts.map((post) => (
-              <Card
-                key={post.title}
-                className="group bg-white border-gray-200 hover:border-[#0033A0]/30 hover:shadow-md transition-all overflow-hidden"
-              >
-                {/* Placeholder image */}
-                <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm font-medium">
-                    Article Image
-                  </span>
-                </div>
-                <CardContent className="pt-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Badge variant="outline" className="text-xs border-gray-300 text-[#6B7280]">
-                      <CalendarDays className="size-3 mr-1" />
-                      {post.date}
-                    </Badge>
-                  </div>
-                  <h2 className="text-lg font-semibold text-[#1C1C1C] mb-2 group-hover:text-[#0033A0] transition-colors">
-                    {post.title}
-                  </h2>
-                  <p className="text-sm text-[#6B7280] leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+      {/* Coming Soon Section */}
+      <section className="py-24 px-6 min-h-[500px] flex items-center">
+        <div className="max-w-2xl mx-auto text-center w-full">
+          <Badge className="mb-4 bg-[#0033A0]/20 text-[#0033A0] border-[#0033A0]/40">
+            Coming Soon
+          </Badge>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1C1C1C] mb-4 tracking-tight">
+            In-Depth Roofing Guides
+          </h2>
+          <p className="text-lg text-[#6B7280] mb-8 leading-relaxed max-w-lg mx-auto">
+            We&apos;re developing expert articles on storm damage restoration, roof replacement decisions, insurance claims, hail damage assessment, and how to extend your roof&apos;s lifespan. Champions Choice is committed to educating Louisville homeowners.
+          </p>
+
+          <div className="bg-[#F3F4F6] rounded-2xl p-8 mb-8">
+            <h3 className="text-xl font-semibold text-[#1C1C1C] mb-4">
+              Get Real-Time Updates
+            </h3>
+            <p className="text-[#6B7280] mb-6">
+              Follow Champions Choice on Facebook for the latest roofing tips, project showcases, and storm damage alerts.
+            </p>
+            <a
+              href="https://www.facebook.com/share/18zCDqTtdS/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-[#0033A0] text-white hover:bg-[#002878] font-semibold px-8 py-6">
+                <Share2 className="size-5 mr-2" />
+                Follow on Facebook
+              </Button>
+            </a>
           </div>
 
-          {/* Coming soon notice */}
-          <div className="text-center mt-16 py-12 rounded-2xl bg-white border border-gray-200 shadow-sm">
-            <h3 className="text-xl font-bold text-[#1C1C1C] mb-2">
-              More Content Coming Soon
-            </h3>
-            <p className="text-[#6B7280] max-w-md mx-auto">
-              We&apos;re working on expert guides and tips to help Louisville homeowners
-              make informed decisions about their roofs.
-            </p>
-          </div>
+          <p className="text-sm text-[#6B7280]">
+            Or call {" "}
+            <a href="tel:5029190278" className="text-[#0033A0] hover:text-[#002878] font-semibold">
+              (502) 919-0278
+            </a>
+            {" "} for expert advice today.
+          </p>
         </div>
       </section>
     </>

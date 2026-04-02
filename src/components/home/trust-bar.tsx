@@ -8,21 +8,21 @@ const stats = [
     icon: Star,
     label: "Google Rating",
     value: "5.0",
-    detail: "14+ Reviews",
+    detail: "14+ Verified Reviews",
     color: "text-[#D4A843]",
   },
   {
     icon: Award,
     label: "Owens Corning",
     value: "Preferred",
-    detail: "Contractor",
+    detail: "Certified Contractor",
     color: "text-[#0033A0]",
   },
   {
     icon: MapPin,
     label: "Serving",
     value: "Louisville",
-    detail: "KY & Surrounding",
+    detail: "KY & Surrounding Areas",
     color: "text-[#0033A0]",
   },
   {
@@ -43,14 +43,15 @@ export function TrustBar() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-gray-200 shadow-sm"
+                className="flex flex-col items-start gap-3 p-5 rounded-2xl bg-white border border-gray-200 shadow-md hover:shadow-lg transition-shadow"
               >
-                <div className={`p-2 rounded-xl bg-[#F3F4F6] ${stat.color}`}>
-                  <stat.icon className="size-5" />
+                <div className={`p-3 rounded-xl bg-[#F3F4F6] ${stat.color}`}>
+                  <stat.icon className="size-6" />
                 </div>
-                <div>
-                  <div className="text-lg font-bold text-[#1C1C1C]">{stat.value}</div>
-                  <div className="text-xs text-[#6B7280]">{stat.detail}</div>
+                <div className="w-full">
+                  <div className="text-2xl font-bold text-[#1C1C1C]">{stat.value}</div>
+                  <div className="text-xs font-semibold text-[#6B7280] uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-xs text-[#6B7280] mt-1">{stat.detail}</div>
                 </div>
               </div>
             ))}

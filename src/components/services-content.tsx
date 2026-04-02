@@ -44,7 +44,7 @@ const roofingServices: ServiceItem[] = [
     ],
   },
   {
-    photoSrc: "/images/services/maintenance.png",
+    photoSrc: "/images/services/maintenance.jpg",
     photoAlt: "Roof maintenance inspection",
     title: "Roof Maintenance",
     description:
@@ -75,7 +75,7 @@ const roofingServices: ServiceItem[] = [
 
 const sidingGutterServices: ServiceItem[] = [
   {
-    photoSrc: "/images/services/siding.png",
+    photoSrc: "/images/services/siding.jpg",
     photoAlt: "Vinyl siding installation on home exterior",
     title: "Vinyl Siding",
     description:
@@ -89,7 +89,7 @@ const sidingGutterServices: ServiceItem[] = [
     ],
   },
   {
-    photoSrc: "/images/services/siding.png",
+    photoSrc: "/images/services/siding.jpg",
     photoAlt: "Hardy fiber cement siding installation",
     title: "Hardy Siding",
     description:
@@ -103,7 +103,7 @@ const sidingGutterServices: ServiceItem[] = [
     ],
   },
   {
-    photoSrc: "/images/services/siding.png",
+    photoSrc: "/images/services/siding.jpg",
     photoAlt: "Aluminum wraps and soffits installation",
     title: "Aluminum Wraps & Soffits",
     description:

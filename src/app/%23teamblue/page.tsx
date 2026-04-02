@@ -23,7 +23,7 @@ export default function TeamBluePage() {
       {/* Hero */}
       <section
         className="pt-32 pb-16 px-6"
-        style={{ background: "linear-gradient(to bottom, #001a4d 0%, #0a0a0a 100%)" }}
+        style={{ background: "linear-gradient(to bottom, #0033A0 0%, #0a0a0a 100%)" }}
       >
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection>

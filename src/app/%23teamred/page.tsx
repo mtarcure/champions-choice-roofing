@@ -23,7 +23,7 @@ export default function TeamRedPage() {
       {/* Hero */}
       <section
         className="pt-32 pb-16 px-6"
-        style={{ background: "linear-gradient(to bottom, #3d0000 0%, #0a0a0a 100%)" }}
+        style={{ background: "linear-gradient(to bottom, #AD0000 0%, #0a0a0a 100%)" }}
       >
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection>

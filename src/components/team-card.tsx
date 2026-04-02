@@ -44,11 +44,11 @@ export function TeamCard({ name, title, nickname, bio, imageSrc, team }: TeamCar
               <Badge
                 className={
                   team === "red"
-                    ? "bg-[#CC0000]/15 text-[#CC0000] border-[#CC0000]/30"
+                    ? "bg-[#AD0000]/15 text-[#AD0000] border-[#AD0000]/30"
                     : "bg-[#0033A0]/15 text-[#0033A0] border-[#0033A0]/30"
                 }
               >
-                Team {team === "red" ? "Red" : "Blue"}
+                {team === "red" ? "Go Cards" : "Go Cats"}
               </Badge>
             )}
           </div>

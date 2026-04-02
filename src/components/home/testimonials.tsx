@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { StarRating } from "@/components/star-rating";
 import { SectionHeading } from "@/components/section-heading";
 import { StaggerContainer, StaggerItem } from "@/components/animated-section";
@@ -24,21 +25,31 @@ export function TestimonialsSection() {
   return (
     <section className="py-24 px-6 bg-[#F3F4F6]">
       <div className="max-w-7xl mx-auto">
-        <SectionHeading
-          title="What Louisville Homeowners Say"
-          subtitle="5.0 stars on Google with 14+ verified reviews"
-        />
+        <div className="text-center mb-12">
+          <SectionHeading
+            title="What Louisville Homeowners Say"
+            subtitle=""
+          />
+          <Badge variant="outline" className="mt-4 border-[#D4A843]/50 text-[#D4A843] text-sm px-4 py-1.5 font-semibold">
+            5.0 Google Rating • 14+ Verified Reviews
+          </Badge>
+        </div>
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t) => (
             <StaggerItem key={t.name}>
-              <Card className="bg-white border-gray-200 h-full shadow-sm">
+              <Card className="bg-white border-gray-200 h-full shadow-md hover:shadow-lg transition-shadow">
                 <CardContent className="pt-6">
+                  <div className="text-3xl leading-none mb-4">&ldquo;</div>
                   <StarRating />
-                  <p className="mt-4 text-[#1C1C1C] leading-relaxed text-sm font-serif italic">
-                    &ldquo;{t.text}&rdquo;
+                  <p className="mt-5 text-[#1C1C1C] leading-relaxed text-sm font-serif italic">
+                    {t.text}
                   </p>
-                  <p className="mt-4 text-sm font-semibold text-[#1C1C1C]">{t.name}</p>
-                  <p className="text-xs text-[#6B7280]">Google Review</p>
+                  <div className="mt-6 pt-4 border-t border-gray-100">
+                    <p className="text-sm font-semibold text-[#1C1C1C]">{t.name}</p>
+                    <Badge variant="secondary" className="mt-2 text-xs">
+                      Google Reviews
+                    </Badge>
+                  </div>
                 </CardContent>
               </Card>
             </StaggerItem>
