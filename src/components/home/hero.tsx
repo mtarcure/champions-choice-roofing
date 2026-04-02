@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function HeroSection() {
   return (
@@ -23,67 +24,82 @@ export function HeroSection() {
       />
 
       <div className="relative max-w-7xl mx-auto px-6 py-32 md:py-0 w-full">
-        <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0033A0]/20 border border-[#0033A0]/40 mb-8">
-              <div className="size-2 rounded-full bg-[#6699ff] animate-pulse" />
-              <span className="text-sm text-[#6699ff] font-medium">
-                Louisville&apos;s Trusted Roofing Contractor
-              </span>
-            </div>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.1]"
-          >
-            Storm-Tested.{" "}
-            <span className="bg-gradient-to-r from-[#CC0000] to-[#0033A0] bg-clip-text text-transparent">
-              Champion-Approved.
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-lg md:text-xl text-zinc-300 max-w-xl leading-relaxed"
-          >
-            Expert roof installations, storm restoration, and unmatched warranties.
-            We champion for Louisville homeowners with every project.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-10 flex flex-col sm:flex-row gap-4"
-          >
-            <a
-              href="https://forms.gle/RaFpTL7RmBaLgeGF6"
-              target="_blank"
-              rel="noopener noreferrer"
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              <Button className="bg-[#CC0000] text-white hover:bg-[#A30000] font-bold text-base px-8 py-6 w-full sm:w-auto">
-                Get Free Inspection
-                <ArrowRight className="size-4 ml-2" />
-              </Button>
-            </a>
-            <a href="tel:5029190278">
-              <Button
-                variant="outline"
-                className="border-[#0033A0] text-white hover:bg-[#0033A0]/20 font-semibold text-base px-8 py-6 w-full sm:w-auto"
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0033A0]/20 border border-[#0033A0]/40 mb-8">
+                <div className="size-2 rounded-full bg-[#6699ff] animate-pulse" />
+                <span className="text-sm text-[#6699ff] font-medium">
+                  Louisville&apos;s Trusted Roofing Contractor
+                </span>
+              </div>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.1]"
+            >
+              Storm-Tested.{" "}
+              <span className="bg-gradient-to-r from-[#CC0000] to-[#0033A0] bg-clip-text text-transparent">
+                Champion-Approved.
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-6 text-lg md:text-xl text-zinc-300 max-w-xl leading-relaxed"
+            >
+              Expert roof installations, storm restoration, and unmatched warranties.
+              We champion for Louisville homeowners with every project.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-10 flex flex-col sm:flex-row gap-4"
+            >
+              <a
+                href="https://forms.gle/RaFpTL7RmBaLgeGF6"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Phone className="size-4 mr-2" />
-                (502) 919-0278
-              </Button>
-            </a>
+                <Button className="bg-[#CC0000] text-white hover:bg-[#A30000] font-bold text-base px-8 py-6 w-full sm:w-auto">
+                  Get Free Inspection
+                  <ArrowRight className="size-4 ml-2" />
+                </Button>
+              </a>
+              <a href="tel:5029190278">
+                <Button className="bg-[#0033A0] text-white hover:bg-[#002878] font-semibold text-base px-8 py-6 w-full sm:w-auto">
+                  <Phone className="size-4 mr-2" />
+                  (502) 919-0278
+                </Button>
+              </a>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hidden md:flex justify-center items-center"
+          >
+            <Image
+              src="/images/logo/logo.jpeg"
+              alt="Champions Choice Roofing - Storm Damage Repair, Louisville KY"
+              width={450}
+              height={450}
+              className="drop-shadow-2xl"
+              priority
+            />
           </motion.div>
         </div>
       </div>
